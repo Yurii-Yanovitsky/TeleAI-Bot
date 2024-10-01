@@ -50,5 +50,9 @@ bot.on("message", async (msg) => {
 
   conversationHistory.push({ role: "assistant", content: aiResponse });
 
-  bot.editMessageText(aiResponse, { chat_id: chatId, message_id });
+  bot.editMessageText(aiResponse, {
+    chat_id: chatId,
+    message_id,
+    parse_mode: "Markdown",
+  });
 });
